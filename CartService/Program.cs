@@ -17,6 +17,11 @@ builder.Services.AddDbContext<CartContext>(options =>
 builder.Services.AddScoped<ICartService, CartServices>();
 builder.Services.AddScoped<IItemCartServices, ItemCartService>();
 
+builder.Services.AddHttpClient<ProductClient>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5101/");
+});
+
 var app = builder.Build();
 
 app.MapControllers();

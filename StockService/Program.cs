@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<StockContext>(Options =>
 {
-    Options.UseNpgsql(builder.Configuration.GetConnectionString("stockConnection"));
+    Options.UseNpgsql(builder.Configuration.GetConnectionString("StockConnection"));
 });
 
 

@@ -293,3 +293,4 @@
 /home/pao/Documentos/git/Fugito/ProductService/obj/Debug/net8.0/ProductService.pdb
 /home/pao/Documentos/git/Fugito/ProductService/obj/Debug/net8.0/ProductService.genruntimeconfig.cache
 /home/pao/Documentos/git/Fugito/ProductService/obj/Debug/net8.0/ref/ProductService.dll
+/home/pao/Documentos/git/Fugito/ProductService/obj/Debug/net8.0/ProductService.sourcelink.json

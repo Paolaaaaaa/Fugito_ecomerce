@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddDbContext<AuthDBcontext>(Options =>
-Options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+Options.UseNpgsql(builder.Configuration.GetConnectionString("AuthConnection")));
 
 
 builder.Services.AddScoped<IUserService, UserService>();

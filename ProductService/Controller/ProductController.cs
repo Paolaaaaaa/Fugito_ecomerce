@@ -4,7 +4,7 @@ using ProductService.DTOs;
 using ProductService.interfaces;
 [Authorize]
 [ApiController]
-[Route("api/v1/Product")]
+[Route("api/v1/product")]
 public class ProductController :  ControllerBase
 {
     
