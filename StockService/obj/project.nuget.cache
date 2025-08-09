@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "vJImEy+qoDl2RxRi3BnkOV4EMeu5HceBTkTz35aZ9AbuUPkMUFhhSvx+iOxSp0IcncdKQhXJarKoHMmtLzP+iQ==",
+  "dgSpecHash": "KSJBiIwDwdVANmT0M6rLQ8Ffw11JTH9JFcWqZ5RNv2XkjS0J0mVz3pr8zXT+OBX9nwhCJULAeqrVjAQfo4xz3g==",
   "success": true,
   "projectFilePath": "/home/pao/Documentos/git/Fugito/StockService/StockService.csproj",
   "expectedPackageFiles": [
+    "/home/pao/.nuget/packages/confluent.kafka/2.11.0/confluent.kafka.2.11.0.nupkg.sha512",
     "/home/pao/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/pao/.nuget/packages/librdkafka.redist/2.11.0/librdkafka.redist.2.11.0.nupkg.sha512",
     "/home/pao/.nuget/packages/microsoft.aspnetcore.openapi/8.0.18/microsoft.aspnetcore.openapi.8.0.18.nupkg.sha512",
     "/home/pao/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "/home/pao/.nuget/packages/microsoft.build.framework/17.8.3/microsoft.build.framework.17.8.3.nupkg.sha512",

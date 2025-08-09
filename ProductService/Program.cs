@@ -44,7 +44,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
-builder.Services.AddScoped<IProductService, ProductServices>();   
+builder.Services.AddScoped<IProductService, ProductServices>();
+
+
+var BootstrapServers = builder.Configuration["Kafka:BootstrapServers"];
+Console.WriteLine($"kafka broker: {BootstrapServers}");
+
+
 var app = builder.Build();
 
 app.MapControllers();

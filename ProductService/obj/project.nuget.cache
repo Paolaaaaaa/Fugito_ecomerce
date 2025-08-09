@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "rnm2kbKBYx6d/VqIUg3jV4cPkz9Ffr/Zf8AUC6pwjqT67/u5kybZZa5kpAfEfwrnKDcBxu4e23iEjA00cDyjpw==",
+  "dgSpecHash": "9xRhttxs2Cj1KaWjMQpluj4lLNyMSYM7Rzu0WoEN61KANyvsnQA6zh0T5kKSU9Q8GvFV8txNg/ToF1d+e4zm9A==",
   "success": true,
   "projectFilePath": "/home/pao/Documentos/git/Fugito/ProductService/ProductService.csproj",
   "expectedPackageFiles": [
+    "/home/pao/.nuget/packages/confluent.kafka/2.11.0/confluent.kafka.2.11.0.nupkg.sha512",
     "/home/pao/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/home/pao/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/pao/.nuget/packages/librdkafka.redist/2.11.0/librdkafka.redist.2.11.0.nupkg.sha512",
     "/home/pao/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.18/microsoft.aspnetcore.authentication.jwtbearer.8.0.18.nupkg.sha512",
     "/home/pao/.nuget/packages/microsoft.aspnetcore.openapi/8.0.18/microsoft.aspnetcore.openapi.8.0.18.nupkg.sha512",
     "/home/pao/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
