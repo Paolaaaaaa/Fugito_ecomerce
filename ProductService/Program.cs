@@ -45,6 +45,7 @@ builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("Mo
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddScoped<IProductService, ProductServices>();
+builder.Services.AddSingleton<KafkaProducer>();
 
 
 var BootstrapServers = builder.Configuration["Kafka:BootstrapServers"];
@@ -63,4 +64,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+
 app.Run();

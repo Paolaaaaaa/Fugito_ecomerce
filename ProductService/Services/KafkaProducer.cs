@@ -6,7 +6,7 @@ public class KafkaProducer
 
     public KafkaProducer(IConfiguration configuration)
     {
-        _bootstrapServers = configuration["kafka:BootstrapServers"];
+        _bootstrapServers = configuration["Kafka:BootstrapServers"];
     }
 
 
@@ -20,6 +20,6 @@ public class KafkaProducer
         using var producer = new ProducerBuilder<Null, string>(config).Build();
         await producer.ProduceAsync(topic, new Message<Null, string> { Value = message });
 
-        Console.WriteLine($"📤 Mensaje enviado a Kafka en topic '{topic}': {message}");
+        Console.WriteLine($" Mensaje enviado a Kafka en topic '{topic}': {message}");
     }
 }

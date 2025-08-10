@@ -10,9 +10,12 @@ public class ProductController :  ControllerBase
     
     private readonly IProductService _productService;
 
-    public ProductController(IProductService productService)
+    private readonly KafkaProducer producer;
+
+    public ProductController(IProductService productService, KafkaProducer kafka)
     {
         _productService = productService;
+        producer = kafka;
     }
 
     [HttpGet]
@@ -38,6 +41,11 @@ public class ProductController :  ControllerBase
     public async Task<IActionResult> CreateProduct(ProductDTO dto)
     {
         var product = await _productService.CreateProductAsyc(dto);
+        // Enviar un evento a kafka
+        var message = System.Text.Json.JsonSerializer.Serialize(product);
+        await producer.SendMessageAsync("product_created", message);
+
+        
         return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
     }
 
