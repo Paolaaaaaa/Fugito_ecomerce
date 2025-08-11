@@ -1,7 +1,7 @@
 # E-Comerce Fugito Proyecto de Microservicios.
 
 ## Descripción
-Este proyecto es un sistema e-comerce basado en microservicios desarrollado para aprender y practicar una quitectura back-end, 1con comunicación asincrona con kafka y despliegue con docker y bases de datos poliglotas (uso de múltiples bases de datos para una misma aplicación).
+Este proyecto es un sistema e-comerce basado en microservicios desarrollado para aprender y practicar una quitectura back-end, con comunicación asincrona con kafka y despliegue con docker y bases de datos poliglotas (uso de múltiples bases de datos para una misma aplicación).
 
 Los microservicios gestionan:
 - <b>Productos</b>
