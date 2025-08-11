@@ -28,8 +28,17 @@ Los microservicios gestionan:
 ```console
 git clone https://github.com/Paolaaaaaa/Fugito_ecomerce.git
 ```
+
+
+
+
 2. Levantar la infraestructura
 
 ```console
 docker-compose up --build
 ```
+## Próximos Pasos
++ Implementar frontend en Angular + Tailwind.
++ Añadir pruebas unitarias y de integración.
++ Integrar CI/CD con GitHub Actions.
++ Desplegar en AWS ECS o Kubernetes.
