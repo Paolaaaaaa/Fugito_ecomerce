@@ -19,8 +19,7 @@ public class Product
     public string Description { get; set; } = string.Empty;
     [BsonElement("Price")]
     public int Price { get; set; }
-    [BsonElement("Stock")]
-    public int stock { get; set; }
+
 
     //imagestore
     [BsonElement("Image")]
