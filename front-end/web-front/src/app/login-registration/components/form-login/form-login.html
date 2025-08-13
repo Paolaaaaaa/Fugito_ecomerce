@@ -1,15 +1,38 @@
-<div class="card shadow-xl w-96 bg-base-100 items-center">
+<div class=" container justify-center  w-full h-full jusitems-center flex-col my-10 mx-8 p-8">
+  <div class="card-title">
+    
+    <h1 class="text-2xl font-bold from-primary">Fugito-Ecomerce</h1>
+  </div>
 
-    <h1 class=" text-xl font-bold "> Create Account</h1>
+  <h1 class="text-xl font-bold text-primary py-8">Inicia Sesión para comprar</h1>
+  <span class="w-9"></span>
+  <div class="flex flex-col-reverse">
+    <div>
+      <form class="flex flex-col gap-4 w-100">
+        <label>Correo Electronico</label>
+        <input
+          id="Email"
+          type="text"
+          placeholder="Ingresa tu correo electronico"
+          class="input input-bordered w-full "
+        />
+        <label>Contraseña</label>
 
-    <form class="flex flex-col gap-4 w-100">
+        <input
+          id="Password"
+          type="text"
+          placeholder="Ingresa tu contraseña"
+          class="input input-bordered w-full "
+        />
+        <span class="w-9"></span>
 
-        <input id="Email"  type="text" placeholder="Email" class="input input-bordered w-full max-w-xs" />
+        <button class="btn btn-primary w-full" (click)="submit()">Ingresar</button>
 
-        <input id="Password" type="text" placeholder="Password" class="input input-bordered w-full max-w-xs" />
-
-<button class="btn btn-wide">Log In</button>
-
-
-    </form>
+        <div class="flex-row-reverse justify-items-center">
+          <p>¿Aún no tienes cuenta?</p>
+          <p><a class="underline" href="auth/register">Registrate</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
