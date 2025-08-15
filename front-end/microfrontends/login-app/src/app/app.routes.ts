@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 import { Login } from './login-registration/pages/login/login';
-import { FormLogin } from './login-registration/components/form-login/form-login';
 import { Register } from './login-registration/pages/register/register';
 import { NgModule } from '@angular/core';
 
@@ -26,9 +25,3 @@ import { NgModule } from '@angular/core';
 
 
 ];
-
-@NgModule({
-  imports:[RouterModule.forChild(authRoutes)],
-  exports: [RouterModule]
-})
-export class AuthRoutesModule{}

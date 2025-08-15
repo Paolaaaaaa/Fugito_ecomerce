@@ -1,5 +1,5 @@
 {
-  "name": "container-app",
+  "name": "product-app",
   "version": "0.0.1",
   "scripts": {
     "build": "NODE_ENV=production rspack build",
@@ -8,29 +8,24 @@
     "start": "NODE_ENV=development rspack serve"
   },
   "devDependencies": {
-    "@module-federation/enhanced": "^0.18.1",
     "@rspack/cli": "~1.2.0",
     "@rspack/core": "~1.2.0",
     "@rspack/plugin-react-refresh": "~1.0.1",
-    "@tailwindcss/postcss": "^4.0.3",
-    "@types/node": "^24.2.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/webpack-env": "^1.18.8",
     "autoprefixer": "^10.1.0",
     "css-loader": "^7.1.2",
-    "daisyui": "^5.0.50",
     "postcss": "^8.2.1",
     "postcss-loader": "^8.0.0",
     "react-refresh": "^0.14.0",
-    "tailwindcss": "^4.0.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "@tailwindcss/postcss": "^4.0.3",
+    "tailwindcss": "^4.0.3"
   },
   "dependencies": {
+    "@module-federation/enhanced": "^0.8.9",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.8.0",
-    "zephyr-rspack-plugin": "^0.0.50"
+    "react-dom": "^19.0.0"
   }
 }
