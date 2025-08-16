@@ -12,17 +12,14 @@
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
-    "types": [],
     "paths": {
       "*": ["./@mf-types/*"]
     }
   },
-  "include": ["src","declarations.d.ts"],
+  "include": ["src"],
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
-      "types": ["node"],
-      "moduleResolution": "node"
+      "module": "CommonJS"
     }
   }
 }

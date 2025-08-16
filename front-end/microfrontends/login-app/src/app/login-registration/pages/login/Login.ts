@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { FormLogin } from "../../components/form-login/form-login";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.html',
+  templateUrl: './Login.html',
   standalone:true,
-  imports: [FormLogin]
+  imports: [FormLogin, CommonModule]
 })
-export class Login {
+export default class Login {
 
 
 

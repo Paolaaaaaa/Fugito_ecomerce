@@ -1,27 +1,11 @@
 import ReactDOM from "react-dom/client";
-import React from "react";
+
 import "./index.css";
-import Footer from "./Header/Footer";
-import AppRouting from "./Routing/Routing";
+import Cart from "./Cart/Page/cart";
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
-
-    
-
-    <header>
-
-    </header>
-    <AppRouting></AppRouting>
- 
-
-
-    <footer>
-
-
-    <Footer/>
-
-    </footer>
+    <Cart></Cart>
   </div>
 );
 

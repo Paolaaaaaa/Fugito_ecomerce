@@ -6,11 +6,11 @@ module.exports=  withModuleFederationPlugin({
   name: 'login_app',
   filename: 'remoteEntry.js',
   exposes: {
-    './Login': './src/app/login-registration/pages/login/login.ts',
+    './LoginMount': './src/app/wrappers/login-wrapper.ts',
 
         './Register': './src/app/login-registration/pages/register/register.ts',
 
-        './Autho':'./src/app/test.ts'
+        './App':'./src/app/app.ts'
 
   },
 
@@ -67,7 +67,8 @@ entry: './src/main.ts',
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
     "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-  }
+  },
+  historyApiFallback:true
   },
 
  

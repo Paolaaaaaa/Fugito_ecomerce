@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { Login } from './login-registration/pages/login/login';
+import Login from './login-registration/pages/login/Login';
 import { Register } from './login-registration/pages/register/register';
 import { NgModule } from '@angular/core';
 
