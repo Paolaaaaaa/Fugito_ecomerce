@@ -1,4 +1,5 @@
 import ItemCard from "../Component/itemCard"
+import ListItems from "../Component/listItems";
 
 export default function Cart() {
 
@@ -15,7 +16,10 @@ export default function Cart() {
     <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
       {/* Sidebar content here */}
-      <ItemCard productName={"Tiguer special"} productImage={""} productPrice={0} productQuantity={0}></ItemCard>
+
+      <ListItems></ListItems>
+
+
     </ul>
   </div>
 </div>
