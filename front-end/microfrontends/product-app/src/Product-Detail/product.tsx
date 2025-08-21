@@ -33,7 +33,7 @@ export default function Product({
         <div className="card-actions flex justify-between">
       <span className="text-xl">{productPrice}</span>
 
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn btn-primary" onClick={() =>{}}>Buy Now</button>
 
         </div>
       </div>

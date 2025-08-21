@@ -7,14 +7,9 @@ interface ListItems {
 export default function ListItems() {
   return (
     <>
+      <div className=" text-3xl">Tu Carrito de Compra</div>
 
-        <div className=" text-3xl">
-          Tu Carrito de Compra
-</div>
-
-        <div className=" text-1x py-3 ">
-Lugar de compra</div>
-
+      <div className=" text-1x py-3 ">Lugar de compra</div>
 
       <div className="join join-vertical bg-base-100">
         <div className="collapse collapse-arrow join-item border-base-300 border">
@@ -44,10 +39,7 @@ Lugar de compra</div>
           </div>
         </div>
 
-
-<>{/* boton de pagar*/} </>
-
-        
+        <>{/* boton de pagar*/} </>
 
         <div className=" text-sm">
           <button className="btn btn-block bg-primary rounded-2xl">
