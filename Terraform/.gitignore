@@ -1,0 +1,26 @@
+# Archivos de estado de Terraform (contienen credenciales y datos sensibles)
+*.tfstate
+*.tfstate.*
+
+# Archivos de respaldo de estado
+*.backup
+*.tfvars.backup
+
+# Archivos de configuración local
+.terraform/
+.terraform.lock.hcl
+
+# Variables locales (pueden contener secretos)
+*.tfvars
+
+# Archivos de salida del plan
+*.plan
+*.out
+
+# Archivos de logs
+crash.log
+crash.*.log
+
+# Archivos de credenciales de proveedores (ejemplo AWS)
+.terraformrc
+terraform.rc
