@@ -11,7 +11,7 @@
 .terraform.lock.hcl
 
 # Variables locales (pueden contener secretos)
-*.tfvars
+#*.tfvars
 
 # Archivos de salida del plan
 *.plan
