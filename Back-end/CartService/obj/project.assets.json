@@ -3367,11 +3367,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pao/Documentos/git/Fugito/CartService/CartService.csproj",
+      "projectUniqueName": "/home/pao/Documentos/git/Fugito/Back-end/CartService/CartService.csproj",
       "projectName": "CartService",
-      "projectPath": "/home/pao/Documentos/git/Fugito/CartService/CartService.csproj",
+      "projectPath": "/home/pao/Documentos/git/Fugito/Back-end/CartService/CartService.csproj",
       "packagesPath": "/home/pao/.nuget/packages/",
-      "outputPath": "/home/pao/Documentos/git/Fugito/CartService/obj/",
+      "outputPath": "/home/pao/Documentos/git/Fugito/Back-end/CartService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/pao/.nuget/NuGet/NuGet.Config"
@@ -3444,7 +3444,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

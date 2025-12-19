@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KSJBiIwDwdVANmT0M6rLQ8Ffw11JTH9JFcWqZ5RNv2XkjS0J0mVz3pr8zXT+OBX9nwhCJULAeqrVjAQfo4xz3g==",
+  "dgSpecHash": "N+FF6D3koZrM/pj6WlFCotEjr9DBiUg6KMwRmEo6d/i3FZvoTjhsvQ7O7334rOt+fanABFFk7zCLxWj2q04vpg==",
   "success": true,
-  "projectFilePath": "/home/pao/Documentos/git/Fugito/StockService/StockService.csproj",
+  "projectFilePath": "/home/pao/Documentos/git/Fugito/Back-end/StockService/StockService.csproj",
   "expectedPackageFiles": [
     "/home/pao/.nuget/packages/confluent.kafka/2.11.0/confluent.kafka.2.11.0.nupkg.sha512",
     "/home/pao/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

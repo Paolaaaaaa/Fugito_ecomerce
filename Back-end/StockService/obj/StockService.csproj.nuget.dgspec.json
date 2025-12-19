@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/pao/Documentos/git/Fugito/StockService/StockService.csproj": {}
+    "/home/pao/Documentos/git/Fugito/Back-end/StockService/StockService.csproj": {}
   },
   "projects": {
-    "/home/pao/Documentos/git/Fugito/StockService/StockService.csproj": {
+    "/home/pao/Documentos/git/Fugito/Back-end/StockService/StockService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pao/Documentos/git/Fugito/StockService/StockService.csproj",
+        "projectUniqueName": "/home/pao/Documentos/git/Fugito/Back-end/StockService/StockService.csproj",
         "projectName": "StockService",
-        "projectPath": "/home/pao/Documentos/git/Fugito/StockService/StockService.csproj",
+        "projectPath": "/home/pao/Documentos/git/Fugito/Back-end/StockService/StockService.csproj",
         "packagesPath": "/home/pao/.nuget/packages/",
-        "outputPath": "/home/pao/Documentos/git/Fugito/StockService/obj/",
+        "outputPath": "/home/pao/Documentos/git/Fugito/Back-end/StockService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/pao/.nuget/NuGet/NuGet.Config"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

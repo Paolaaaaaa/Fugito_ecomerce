@@ -7,6 +7,7 @@ using Autho.models;
 using Autho.dtos;
 
 namespace Autho.Services;
+
 using Autho;
 
 public class UserService : IUserService
@@ -28,11 +29,11 @@ public class UserService : IUserService
         }
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
         var user = new User
-        {
-            Email = dto.Email,
-            PasswordHash = passwordHash,
-            Role = dto.Role
-        };
+        (
+             dto.Email,
+           passwordHash,
+           dto.Role ?? "Customer"
+        );
         authDBcontext.Users.Add(user);
         await authDBcontext.SaveChangesAsync();
         return GenerateToken(user);

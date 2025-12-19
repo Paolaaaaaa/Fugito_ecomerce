@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kvwe0UVGYiT4kZRBwEydtmI1jp1jlsllXWKrlw4kijK19JEynvvjxFaLn2P8YoTUqFcQ0mY93lWOoXHUsPNAXA==",
+  "dgSpecHash": "su0OkpPQTS9Pmj/RonPb5KYMXi8uMy2j66m5QKQWhF14xzZnlT1/DytQHEci1DYW8P4knlSCg5CBdf6htVMGyA==",
   "success": true,
-  "projectFilePath": "/home/pao/Documentos/git/Fugito/CartService/CartService.csproj",
+  "projectFilePath": "/home/pao/Documentos/git/Fugito/Back-end/CartService/CartService.csproj",
   "expectedPackageFiles": [
     "/home/pao/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/pao/.nuget/packages/microsoft.aspnetcore.openapi/8.0.18/microsoft.aspnetcore.openapi.8.0.18.nupkg.sha512",

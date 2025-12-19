@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "9f0745f4-d98e-4fcb-a204-059824bb37ca",
+		"name": "Ecomerce-Fugito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19933024"
+	},
+	"item": [
+		{
+			"name": "Create a product",
+			"item": [
+				{
+					"name": "registration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json();",
+									"pm.environment.set(\"jwt_token\", json.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"email\": \"laura1@gmail.com\",\n  \"password\": \"*Password123\",\n  \"role\":\"ADMIN\"\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{URLAutho}}:{{PORTAutho}}/api/{{VERSIONAutho}}/auth/register",
+							"protocol": "http",
+							"host": [
+								"{{URLAutho}}"
+							],
+							"port": "{{PORTAutho}}",
+							"path": [
+								"api",
+								"{{VERSIONAutho}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Hamburger\",\n  \"description\": \"Hamburger with fries\",\n  \"price\": 15000,\n  \"stock\": 3,\n  \"image\": \"\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{URLProduct}}:{{PORTProduct}}/api/{{VERSIONProduct}}/Product/",
+							"protocol": "http",
+							"host": [
+								"{{URLProduct}}"
+							],
+							"port": "{{PORTProduct}}",
+							"path": [
+								"api",
+								"{{VERSIONProduct}}",
+								"Product",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This is a small test to create a product in the database."
+		},
+		{
+			"name": "Create a Cart and Add Items",
+			"item": [
+				{
+					"name": "registration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json();",
+									"pm.environment.set(\"jwt_token\", json.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"email\": \"customer1@gmail.com\",\n  \"password\": \"*Password1234\",\n  \"role\":\"CUSTOMER\"\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{URLAutho}}:{{PORTAutho}}/api/{{VERSIONAutho}}/auth/register",
+							"protocol": "http",
+							"host": [
+								"{{URLAutho}}"
+							],
+							"port": "{{PORTAutho}}",
+							"path": [
+								"api",
+								"{{VERSIONAutho}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Hamburger\",\n  \"description\": \"Hamburger with fries\",\n  \"price\": 15000,\n  \"stock\": 3,\n  \"image\": \"\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{URLCart}}:{{PORTProduct}}/api/{{VERSIONProduct}}/Product/",
+							"protocol": "http",
+							"host": [
+								"{{URLCart}}"
+							],
+							"port": "{{PORTProduct}}",
+							"path": [
+								"api",
+								"{{VERSIONProduct}}",
+								"Product",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This is a small test to create a product in the database."
+		},
+		{
+			"name": "Auth Service",
+			"item": [
+				{
+					"name": "registration Customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json();",
+									"pm.environment.set(\"jwt_token\", json.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"email\": \"laura11@gmail.com\",\n  \"password\": \"*Password123\",\n  \"role\":\"ADMIN\"\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{URLAutho}}:{{PORTAutho}}/api/{{VERSIONAutho}}/auth/register",
+							"protocol": "http",
+							"host": [
+								"{{URLAutho}}"
+							],
+							"port": "{{PORTAutho}}",
+							"path": [
+								"api",
+								"{{VERSIONAutho}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json();",
+									"pm.environment.set(\"jwt_token\", json.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"email\": \"laura11@gmail.com\",\n  \"password\": \"*Password123\",\n  \"role\":\"ADMIN\"\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{URLAutho}}:{{PORTAutho}}/api/{{VERSIONAutho}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{URLAutho}}"
+							],
+							"port": "{{PORTAutho}}",
+							"path": [
+								"api",
+								"{{VERSIONAutho}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "In this File you will find all services delivered by the auth service"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9xRhttxs2Cj1KaWjMQpluj4lLNyMSYM7Rzu0WoEN61KANyvsnQA6zh0T5kKSU9Q8GvFV8txNg/ToF1d+e4zm9A==",
+  "dgSpecHash": "oVBLnKBppLBfxL1nbixAGp9OUVWDv9oaQvkrijSBBhB10kjiTJWN+b//WV7taoX1er3oxVYWLfrtss/3evPOYw==",
   "success": true,
-  "projectFilePath": "/home/pao/Documentos/git/Fugito/ProductService/ProductService.csproj",
+  "projectFilePath": "/home/pao/Documentos/git/Fugito/Back-end/ProductService/ProductService.csproj",
   "expectedPackageFiles": [
     "/home/pao/.nuget/packages/confluent.kafka/2.11.0/confluent.kafka.2.11.0.nupkg.sha512",
     "/home/pao/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",

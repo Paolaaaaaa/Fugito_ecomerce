@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/pao/Documentos/git/Fugito/ProductService/ProductService.csproj": {}
+    "/home/pao/Documentos/git/Fugito/Back-end/ProductService/ProductService.csproj": {}
   },
   "projects": {
-    "/home/pao/Documentos/git/Fugito/ProductService/ProductService.csproj": {
+    "/home/pao/Documentos/git/Fugito/Back-end/ProductService/ProductService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pao/Documentos/git/Fugito/ProductService/ProductService.csproj",
+        "projectUniqueName": "/home/pao/Documentos/git/Fugito/Back-end/ProductService/ProductService.csproj",
         "projectName": "ProductService",
-        "projectPath": "/home/pao/Documentos/git/Fugito/ProductService/ProductService.csproj",
+        "projectPath": "/home/pao/Documentos/git/Fugito/Back-end/ProductService/ProductService.csproj",
         "packagesPath": "/home/pao/.nuget/packages/",
-        "outputPath": "/home/pao/Documentos/git/Fugito/ProductService/obj/",
+        "outputPath": "/home/pao/Documentos/git/Fugito/Back-end/ProductService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/pao/.nuget/NuGet/NuGet.Config"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

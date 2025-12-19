@@ -23,7 +23,7 @@ public class ProductServices : IProductService
             Price = dto.Price,
             Description = dto.Description,
             Image = dto.Image,
-            stock =dto.stock
+            Stock =dto.Stock
         };
         await dBContext.CreateProduct(product);
         return product;
@@ -66,7 +66,7 @@ public class ProductServices : IProductService
             Price = dto.Price,
             Description = dto.Description,
             Image = dto.Image,
-            stock = dto.stock
+            Stock = dto.Stock
         };
 
 

@@ -1,11 +1,33 @@
+using System.ComponentModel.DataAnnotations;
+
+using UUIDNext;
+
 namespace Autho.models;
+public class User
+{
 
-    public class User
+
+    [Key]
+    public Guid Id { get; set; }
+    [EmailAddress]
+    [Required]
+    [MaxLength(255)]
+    public string Email { get; set; } = null!;
+    [Required]
+    public string PasswordHash { get; set; } = null!;
+    [Required]
+    [MaxLength(20)]
+    public string Role { get; set; } = "Customer";
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+
+    public User(string email, string passwordHash, string role)
     {
-
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public string Email { get; set; } = null!;
-        public string PasswordHash { get; set; } = null!;
-        public string Role { get; set; } = "Customer";
-
+        Id =  Uuid.NewDatabaseFriendly(Database.PostgreSql);
+        Email = email;
+        PasswordHash = passwordHash;
+        Role = role;
     }
+
+}

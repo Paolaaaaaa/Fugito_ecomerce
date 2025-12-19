@@ -51,7 +51,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__MongoConnection=mongodb://mongo:27017
-      - kafka__bootstrapServers = kafka:9092
+      - kafka__bootstrapServers=kafka:9092
     networks:
       - fugito-net
 

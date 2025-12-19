@@ -34,9 +34,26 @@ git clone https://github.com/Paolaaaaaa/Fugito_ecomerce.git
 
 2. Levantar la infraestructura
 
+
+```console
+cd ./Back-end/
+```
+
 ```console
 docker-compose up --build
+
+
+3. Entity Framework Migrations
+
+
+
+```console
+dotnet ef migrate [NAME]
 ```
+```console
+dotnet ef database update
+```
+
 ## Próximos Pasos
 + Implementar frontend en Angular + Tailwind.
 + Añadir pruebas unitarias y de integración.

@@ -25,4 +25,7 @@ public class Product
     [BsonElement("Image")]
     public string Image { get; set; } = string.Empty;
 
+    [BsonElement("Stock")]
+    public int Stock { get; set;} =1;
+
 }

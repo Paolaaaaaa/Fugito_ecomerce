@@ -14,7 +14,9 @@
           "Microsoft.EntityFrameworkCore": "9.0.7",
           "Microsoft.EntityFrameworkCore.Design": "9.0.7",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
-          "Swashbuckle.AspNetCore": "6.6.2"
+          "Swashbuckle.AspNetCore": "6.6.2",
+          "System.Memory": "4.6.3",
+          "UUIDNext": "4.2.2"
         },
         "runtime": {
           "AuthService.dll": {}
@@ -771,6 +773,7 @@
           }
         }
       },
+      "System.Memory/4.6.3": {},
       "System.Reflection.Metadata/7.0.0": {
         "dependencies": {
           "System.Collections.Immutable": "7.0.0"
@@ -805,7 +808,15 @@
           }
         }
       },
-      "System.Threading.Channels/7.0.0": {}
+      "System.Threading.Channels/7.0.0": {},
+      "UUIDNext/4.2.2": {
+        "runtime": {
+          "lib/net8.0/UUIDNext.dll": {
+            "assemblyVersion": "4.2.2.0",
+            "fileVersion": "4.2.2.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -1192,6 +1203,13 @@
       "path": "system.io.pipelines/9.0.7",
       "hashPath": "system.io.pipelines.9.0.7.nupkg.sha512"
     },
+    "System.Memory/4.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qdcDOgnFZY40+Q9876JUHnlHu7bosOHX8XISRoH94fwk6hgaeQGSgfZd8srWRZNt5bV9ZW2TljcegDNxsf+96A==",
+      "path": "system.memory/4.6.3",
+      "hashPath": "system.memory.4.6.3.nupkg.sha512"
+    },
     "System.Reflection.Metadata/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1226,6 +1244,13 @@
       "sha512": "sha512-qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
       "path": "system.threading.channels/7.0.0",
       "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
+    },
+    "UUIDNext/4.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xgAgS9ltGmNanrP1NKDNC6ABOaYgU0D5q3NkNPg/yJXdnNL+jB+Hl+k4SUaJ+EscxbaVSNDRRoDhqjprxEthfA==",
+      "path": "uuidnext/4.2.2",
+      "hashPath": "uuidnext.4.2.2.nupkg.sha512"
     }
   }
 }

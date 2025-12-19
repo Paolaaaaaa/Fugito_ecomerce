@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/pao/Documentos/git/Fugito/AuthService/AuthService.csproj": {}
+    "/home/pao/Documentos/git/Fugito/Back-end/AuthService/AuthService.csproj": {}
   },
   "projects": {
-    "/home/pao/Documentos/git/Fugito/AuthService/AuthService.csproj": {
+    "/home/pao/Documentos/git/Fugito/Back-end/AuthService/AuthService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pao/Documentos/git/Fugito/AuthService/AuthService.csproj",
+        "projectUniqueName": "/home/pao/Documentos/git/Fugito/Back-end/AuthService/AuthService.csproj",
         "projectName": "AuthService",
-        "projectPath": "/home/pao/Documentos/git/Fugito/AuthService/AuthService.csproj",
+        "projectPath": "/home/pao/Documentos/git/Fugito/Back-end/AuthService/AuthService.csproj",
         "packagesPath": "/home/pao/.nuget/packages/",
-        "outputPath": "/home/pao/Documentos/git/Fugito/AuthService/obj/",
+        "outputPath": "/home/pao/Documentos/git/Fugito/Back-end/AuthService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/pao/.nuget/NuGet/NuGet.Config"
@@ -67,6 +67,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
+            },
+            "System.Memory": {
+              "target": "Package",
+              "version": "[4.6.3, )"
+            },
+            "UUIDNext": {
+              "target": "Package",
+              "version": "[4.2.2, )"
             }
           },
           "imports": [
@@ -88,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

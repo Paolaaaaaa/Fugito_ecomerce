@@ -1116,6 +1116,15 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "System.Memory/4.6.3": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
       "System.Reflection.Metadata/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -1207,6 +1216,19 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "UUIDNext/4.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/UUIDNext.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/UUIDNext.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -3516,6 +3538,27 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Memory/4.6.3": {
+      "sha512": "qdcDOgnFZY40+Q9876JUHnlHu7bosOHX8XISRoH94fwk6hgaeQGSgfZd8srWRZNt5bV9ZW2TljcegDNxsf+96A==",
+      "type": "package",
+      "path": "system.memory/4.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Memory.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Memory.dll",
+        "lib/net462/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "lib/netstandard2.1/_._",
+        "system.memory.4.6.3.nupkg.sha512",
+        "system.memory.nuspec"
+      ]
+    },
     "System.Reflection.Metadata/7.0.0": {
       "sha512": "MclTG61lsD9sYdpNz9xsKBzjsmsfCtcMZYXz/IUr2zlhaTaABonlr1ESeompTgM+Xk+IwtGYU7/voh3YWB/fWw==",
       "type": "package",
@@ -3700,6 +3743,25 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "UUIDNext/4.2.2": {
+      "sha512": "xgAgS9ltGmNanrP1NKDNC6ABOaYgU0D5q3NkNPg/yJXdnNL+jB+Hl+k4SUaJ+EscxbaVSNDRRoDhqjprxEthfA==",
+      "type": "package",
+      "path": "uuidnext/4.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Logo_128.png",
+        "README.md",
+        "lib/net8.0/UUIDNext.dll",
+        "lib/net8.0/UUIDNext.xml",
+        "lib/netstandard2.0/UUIDNext.dll",
+        "lib/netstandard2.0/UUIDNext.xml",
+        "lib/netstandard2.1/UUIDNext.dll",
+        "lib/netstandard2.1/UUIDNext.xml",
+        "uuidnext.4.2.2.nupkg.sha512",
+        "uuidnext.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -3710,7 +3772,9 @@
       "Microsoft.EntityFrameworkCore >= 9.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.7",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
-      "Swashbuckle.AspNetCore >= 6.6.2"
+      "Swashbuckle.AspNetCore >= 6.6.2",
+      "System.Memory >= 4.6.3",
+      "UUIDNext >= 4.2.2"
     ]
   },
   "packageFolders": {
@@ -3719,11 +3783,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pao/Documentos/git/Fugito/AuthService/AuthService.csproj",
+      "projectUniqueName": "/home/pao/Documentos/git/Fugito/Back-end/AuthService/AuthService.csproj",
       "projectName": "AuthService",
-      "projectPath": "/home/pao/Documentos/git/Fugito/AuthService/AuthService.csproj",
+      "projectPath": "/home/pao/Documentos/git/Fugito/Back-end/AuthService/AuthService.csproj",
       "packagesPath": "/home/pao/.nuget/packages/",
-      "outputPath": "/home/pao/Documentos/git/Fugito/AuthService/obj/",
+      "outputPath": "/home/pao/Documentos/git/Fugito/Back-end/AuthService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/pao/.nuget/NuGet/NuGet.Config"
@@ -3779,6 +3843,14 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.6.2, )"
+          },
+          "System.Memory": {
+            "target": "Package",
+            "version": "[4.6.3, )"
+          },
+          "UUIDNext": {
+            "target": "Package",
+            "version": "[4.2.2, )"
           }
         },
         "imports": [
@@ -3800,7 +3872,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

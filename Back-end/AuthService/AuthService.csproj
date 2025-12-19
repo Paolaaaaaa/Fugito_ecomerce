@@ -17,6 +17,8 @@
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="System.Memory" Version="4.6.3" />
+    <PackageReference Include="UUIDNext" Version="4.2.2" />
 <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.18" />  </ItemGroup>
 
 </Project>
