@@ -1,8 +1,12 @@
 using Confluent.Kafka;
+using Microsoft.VisualBasic;
+using System.Net;
 
-public class KafkaProducer
+public class ProducerConfig
 {
-    private readonly string _bootstrapServers;
+    private readonly string Iproducer;
+
+
 
     public KafkaProducer(IConfiguration configuration)
     {

@@ -1,33 +1,67 @@
 services:
+
+  kafka-ui:
+      image: provectuslabs/kafka-ui:latest
+      container_name: kafka-ui
+      ports:
+        - "8080:8080"
+      environment:
+        KAFKA_CLUSTERS_0_NAME: local-kafka
+        # finds the Kafka broker by its service name and port defined in docker-compose.yml
+        KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+        KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: SASL_PLAINTEXT
+        KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM: PLAIN
+        KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG: org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="admin-secret";
+        
+
+      networks:
+        - fugito-net
+      depends_on:
+        - kafka
   kafka:
     image: apache/kafka:3.8.0
     container_name: kafka
     ports:
       - "9092:9092"
     environment:
-      # iD FOR THE SERVER OF THE CLUSTER
+
+
+      #roles
       - KAFKA_NODE_ID=1
-      # DEFINING THE ROLES OF THE KAFKA BROKER
-      - KAFKA_PROCESS_ROLES=broker, controller
+      - KAFKA_PROCESS_ROLES=broker,controller
 
-      # LISTENERS AND ADVERTISED LISTENERS CONFIGURATION Kafka opens 9092 is for .net services  and 9093 is for controller communication
-      - KAFKA_LISTENERS=PLAINTEXT://localhost:9092,CONTROLLER://:9093
-      # ADVERTISED LISTENERS TO BE USED BY THE CLIENTS TO CONNECT TO KAFKA BROKER
-      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
 
-      - KAFKA_CONTROLLER_LiSTENER_NAME=CONTROLLER
-      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      #Listeners
+      - KAFKA_LISTENERS=SASL_PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
+      - KAFKA_ADVERTISED_LISTENERS=SASL_PLAINTEXT://kafka:9092  # Advertised Listeners (Lo que el cliente .NET usará para conectar)
+
+
+
+      # Seguridad 
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=SASL_PLAINTEXT:SASL_PLAINTEXT,CONTROLLER:PLAINTEXT
+      - KAFKA_INTER_BROKER_LISTENER_NAME:SASL_PLAINTEXT
+      - KAFKA_CONTROLLER_LISTENER_NAMES:CONTROLLER
+
+      # Configuración de KRaft QUORUM        
+      - KAFKA_CONTROLLER_QUORUM_VOTERS:1@kafka:9093
       
-      
-      
-      #Select the voter to elect a leader for the controller quorum
-      - KAFKA_CONTROLLER_QUORUM_VOTERS=1@localhost:9093
-      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
-      - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
-      - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
+      # Habilitar sasl
+      - KAFKA_SASL_ENABLED_MECHANISMS=PLAIN
+      - KAFKA_SASL_MECHANISM_INTER_BROKER_PROTOCOL=PLAIN
 
-      - KAFKA_CLUSTER_ID=RkVHSU8tS0FGRS1DTFVTVEVSLUNMQVNUZXItMQ==
 
+      # Configuración de usuario y contraseña
+      - KAFKA_OPTS=Djava.security.auth.login.config=/opt/kafka/config/kafka_jaas.conf
+
+
+      
+      # Configuraciones de estabilidad
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR:1
+      - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR:1
+      - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR:1
+
+    volumes:
+      - kafka_data:/var/lib/kafka/data
     networks:
       - fugito-net
 
@@ -112,6 +146,7 @@ services:
 volumes:
   postgres_data:
   mongo_data:
+  kafka_data:
 
 networks:
   fugito-net:

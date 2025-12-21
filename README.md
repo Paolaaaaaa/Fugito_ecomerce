@@ -38,24 +38,47 @@ git clone https://github.com/Paolaaaaaa/Fugito_ecomerce.git
 ```console
 cd ./Back-end/
 ```
+3. Levantar contenedores de todos los servicios
 
 ```console
-docker-compose up --build
-
-
-3. Entity Framework Migrations
-
-
-
-```console
-dotnet ef migrate [NAME]
+docker-compose up 
 ```
+
+
+## Migraciones y Cambios a base de datos
+
+1. Nombrar la migración
+
+
+
 ```console
-dotnet ef database update
+dotnet ef migrate [NAME OF MIGRATION]
 ```
+2. Realizar los cambios a base de datos
+
+```console
+dotnet ef database update .
+
+```
+## Configuración de Kafka + KRaft
+
+1. Abrir consola de él docker de kafka
+
+```console
+docker exec --workdir /opt/kafka/bin/ -it [broker name] sh 
+```
+2. Creación de Topics (with 3 partitions and a replication factor of 1)
+
+```console
+./kafka-topics.sh \--bootstrap-server localhost:9092 --create --topic ecomerce.prod.stock.productNotCreated --partitions 3   --replication-factor 1
+
+```
+<https://hub.docker.com/r/apache/kafka>
 
 ## Próximos Pasos
 + Implementar frontend en Angular + Tailwind.
++ Script para configuración de kafka
+
 + Añadir pruebas unitarias y de integración.
 + Integrar CI/CD con GitHub Actions.
 + Desplegar en AWS ECS o Kubernetes.
