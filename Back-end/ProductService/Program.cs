@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using ProductService.interfaces;
 using ProductServiceContext;
+using Messaging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,7 +46,7 @@ builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("Mo
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddScoped<IProductService, ProductServices>();
-builder.Services.AddSingleton<KafkaProducer>();
+builder.Services.AddSingleton<IProductEventProducer, KafkaProductCreateEventProducer>();
 
 
 var BootstrapServers = builder.Configuration["Kafka:BootstrapServers"];

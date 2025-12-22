@@ -24,3 +24,6 @@ crash.*.log
 # Archivos de credenciales de proveedores (ejemplo AWS)
 .terraformrc
 terraform.rc
+
+.secrets/*
+.certs/*
