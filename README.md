@@ -1,13 +1,33 @@
 # E-Comerce Fugito Proyecto de Microservicios.
-
+Proyecto de aprendizaje en arquitectura de microservicios con .NET y Kafka
 ## Descripción
-Este proyecto es un sistema e-comerce basado en microservicios desarrollado para aprender y practicar una quitectura back-end, con comunicación asincrona con kafka y despliegue con docker y bases de datos poliglotas (uso de múltiples bases de datos para una misma aplicación).
+Fugito E-Commerce es un proyecto backend basado en microservicios, desarrollado con el objetivo de aprender y practicar conceptos de arquitectura distribuida, comunicación asíncrona con Apache Kafka, seguridad entre servicios y despliegue con Docker.
 
-Los microservicios gestionan:
-- <b>Productos</b>
-- <b>Carrito de compras e items </b>
-- <b>stock</b>
-- <b>Usuarios</b>
+El proyecto no busca ser un e-commerce productivo, sino un entorno controlado para experimentar patrones usados en sistemas reales, como:
+
+- Event-Driven Architecture
+
+- Persistencia poliglota
+
+- Seguridad en mensajería
+
+- Desacoplamiento entre servicios
+
+##  Microservicios implementados
+
+El sistema está compuesto por los siguientes servicios:
+
+<b> Auth Service </b>
+Gestión de usuarios y autenticación mediante JWT.
+
+Product Service
+Gestión de productos. Publica eventos cuando se crea un producto.
+
+Stock Service
+Gestión de inventario. Consume eventos de Kafka para sincronizar el stock.
+
+Cart Service
+Gestión de carritos de compra e ítems asociados.
 ## Tecnologías utilizadas
 - Backend: .NET 8 (C#) , ASP.NET, Core Web API,
 - Bases de datos:

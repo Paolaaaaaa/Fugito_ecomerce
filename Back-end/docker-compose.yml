@@ -53,19 +53,18 @@ services:
       KAFKA_AUTHORIZER_CLASS_NAME: "org.apache.kafka.metadata.authorizer.StandardAuthorizer"
       KAFKA_SUPER_USERS: "User:admin"
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
-      KAFKA_BROKER_PRINCIPAL:"User: admin"
+      KAFKA_BROKER_PRINCIPAL: "User:admin"
 
       # Configuración de SSL TLS (Cifrado)
       KAFKA_SSL_KEYSTORE_LOCATION: "/etc/kafka/secrets"
       KAFKA_SSL_KEYSTORE_FILENAME: "kafka.keystore.jks"
-      KAFKA_SSL_KEYSTORE_PASSWORD: "kafka-secret"
-      KAFKA_SSL_KEY_PASSWORD: "kafka-secret"
 
       KAFKA_SSL_TRUSTSTORE_LOCATION: "/etc/kafka/secrets"
       KAFKA_SSL_TRUSTSTORE_FILENAME: "kafka.truststore.jks"
-      KAFKA_SSL_TRUSTSTORE_PASSWORD: "kafka-secret"
       KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: "HTTPS"
-      
+      KAFKA_SSL_KEY_CREDENTIALS: "key_creds"
+      KAFKA_SSL_KEYSTORE_CREDENTIALS: "keystore_creds"
+      KAFKA_SSL_TRUSTSTORE_CREDENTIALS: "truststore_creds"
       # Configuraciones de estabilidad
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
@@ -74,8 +73,8 @@ services:
 
     volumes:
       - kafka_data:/var/lib/kafka/data
-      - ./kafka_jaas.conf:/opt/kafka/config/kafka_jaas.conf
-      - ./client.properties:/opt/kafka/config/client.properties
+      - ./kafka_jaas.conf:/etc/kafka/kafka_jaas.conf
+      - ./client.properties:/etc/kafka/client.properties
       - ./secrets:/etc/kafka/secrets
 
 
