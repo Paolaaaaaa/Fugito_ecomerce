@@ -29,6 +29,8 @@ Gestión de inventario. Consume eventos de Kafka para sincronizar el stock.
 Cart Service
 Gestión de carritos de compra e ítems asociados.
 ## Tecnologías utilizadas
+- Frontend: React + Vite
+- CSS: Tailwind + DaisyUI
 - Backend: .NET 8 (C#) , ASP.NET, Core Web API,
 - Bases de datos:
   - MongoDB ( para Producto Service)
@@ -53,7 +55,8 @@ git clone https://github.com/Paolaaaaaa/Fugito_ecomerce.git
 
 
 
-2. Levantar la infraestructura
+
+2. Levantar la infraestructura backend
 
 
 ```console
@@ -65,7 +68,17 @@ cd ./Back-end/
 docker-compose up 
 ```
 
+3. Levantar la infraestructura frontend
 
+
+```console
+cd ./front-end/
+```
+3. Levantar contenedores de todos los servicios
+
+```console
+docker-compose up 
+```
 
 ## Configuración de Kafka + KRaft
 
