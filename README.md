@@ -17,16 +17,16 @@ El proyecto no busca ser un e-commerce productivo, sino un entorno controlado pa
 
 El sistema está compuesto por los siguientes servicios:
 
-<b> Auth Service </b>
+**Auth Service**
 Gestión de usuarios y autenticación mediante JWT.
 
-Product Service
+**Product Service**
 Gestión de productos. Publica eventos cuando se crea un producto.
 
-Stock Service
+**Stock Service**
 Gestión de inventario. Consume eventos de Kafka para sincronizar el stock.
 
-Cart Service
+**Cart Service**
 Gestión de carritos de compra e ítems asociados.
 ## Tecnologías utilizadas
 - Frontend: React + Vite

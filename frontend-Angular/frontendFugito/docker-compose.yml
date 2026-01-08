@@ -1,0 +1,7 @@
+services:
+  frontend-angular:
+    build: .
+    ports: 
+      - "8080:80"
+
+  

@@ -1,0 +1,16 @@
+<div class="card bg-base-100 w-96 shadow-sm">
+    <div className="badge badge-secondary" (click)="onAddToCart()">Add</div>
+
+  <figure>
+    <img
+      [src]=" product.imageUrl || 'https://img.icons8.com/office/40/no-image.png'"
+      [alt]="product.name || 'No Name'" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{{product.name}}</h2>
+    <p>{{product.description}}</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">{{product.price}}</button>
+    </div>
+  </div>
+</div>
