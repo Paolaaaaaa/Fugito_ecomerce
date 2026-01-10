@@ -1,59 +1,94 @@
 # FrontendFugito
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+ Arquitectura del Proyecto
 
-## Development server
+  Resumen General
+  ┌───────────┬────────────────────────────────────┐
+  │           │                                    │
+  ├───────────┼────────────────────────────────────┤
+  │ Proyecto  │ frontendFugito (E-commerce)        │
+  ├───────────┼────────────────────────────────────┤
+  │ Framework │ Angular 21 con SSR                 │
+  ├───────────┼────────────────────────────────────┤
+  │ UI        │ Tailwind CSS + DaisyUI             │
+  ├───────────┼────────────────────────────────────┤
+  │ Patrón    │ Feature-based Modular Architecture │
+  └───────────┴────────────────────────────────────┘
+  ---
+  Estructura de Carpetas
 
-To start a local development server, run:
+  src/app/
+  ├── features/                    # Componentes reutilizables por dominio
+  │   ├── general/
+  │   │   └── breadcrumbs/
+  │   └── products/
+  │       ├── product-card/        # Componente presentacional
+  │       ├── product-list/        # Componente contenedor
+  │       ├── Service/             # Servicios del dominio
+  │       └── product.model.ts     # Modelos de datos
+  │
+  └── pages/                       # Componentes de página (rutas)
+      ├── products/
+      ├── login/
+      └── cart/
 
-```bash
-ng serve
-```
+  ---
+  Patrón Arquitectónico
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+  Container/Presentational Pattern:
+  ProductService (HTTP/Data)
+         ↓
+  ProductList (Container - fetch, estado, lógica)
+         ↓
+  ProductCard (Presentational - @Input/@Output, solo UI)
 
-## Code scaffolding
+  ---
+  Características Clave
+  ┌────────────────┬──────────────────────────────────────┐
+  │ Característica │            Implementación            │
+  ├────────────────┼──────────────────────────────────────┤
+  │ Componentes    │ Standalone (sin NgModules)           │
+  ├────────────────┼──────────────────────────────────────┤
+  │ Routing        │ Lazy loading con loadComponent()     │
+  ├────────────────┼──────────────────────────────────────┤
+  │ Estado         │ Signals + RxJS Observables           │
+  ├────────────────┼──────────────────────────────────────┤
+  │ Control Flow   │ @if, @for (Angular 17+)              │
+  ├────────────────┼──────────────────────────────────────┤
+  │ SSR            │ Prerendering habilitado              │
+  ├────────────────┼──────────────────────────────────────┤
+  │ HTTP           │ HttpClient con servicios inyectables │
+  └────────────────┴──────────────────────────────────────┘
+  ---
+  Configuración de Rutas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+  routes = [
+    { path: '', redirectTo: 'products' },
+    { path: 'products', loadComponent: () => Products },  // Lazy
+    { path: 'cart', loadComponent: () => Cart },          // Lazy
+    { path: 'login', loadComponent: () => Login },        // Lazy
+    { path: '**', redirectTo: 'products' }
+  ]
 
-```bash
-ng generate component component-name
-```
+  ---
+  Flujo de Datos (Products)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+  environment.apiBaseUrl → ProductService.getAll()
+                                ↓
+                          ProductList (subscribe)
+                                ↓
+                      loading / error / products[]
+                                ↓
+                        @for → ProductCard × n
 
-```bash
-ng generate --help
-```
+  ---
+  Áreas a Mejorar
 
-## Building
+  1. Autenticación - Login page es placeholder, falta AuthService/Guards
+  2. Interceptores HTTP - Para tokens, manejo de errores global
+  3. Caché - Sin estrategia de caching para HTTP
+  4. Route Guards - No hay canActivate implementado
+  5. Breadcrumbs - Componente existe pero no está conectado al router
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+  ---
+  La arquitectura está bien estructurada para escalar. Sigue buenas prácticas de Angular moderno con standalone components, lazy loading, y separación clara entre features y pages.

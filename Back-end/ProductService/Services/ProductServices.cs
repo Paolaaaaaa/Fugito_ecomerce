@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProductServiceContext;
 using ProductService.DTOs;
-using ProductService.interfaces;
 using ProductService.models;
 
 public class ProductServices : IProductService
@@ -23,7 +22,6 @@ public class ProductServices : IProductService
             Price = dto.Price,
             Description = dto.Description,
             Image = dto.Image,
-            Stock =dto.Stock
         };
         await dBContext.CreateProduct(product);
         return product;
@@ -66,7 +64,6 @@ public class ProductServices : IProductService
             Price = dto.Price,
             Description = dto.Description,
             Image = dto.Image,
-            Stock = dto.Stock
         };
 
 

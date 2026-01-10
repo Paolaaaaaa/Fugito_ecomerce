@@ -1,11 +1,13 @@
 import { Component, Input, Output , EventEmitter} from '@angular/core';
-import { Product } from '../../features/products/product.model';
+import { Product } from '../product.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-card',
-  imports: [],
+  imports: [ CommonModule],
   templateUrl: './product-card.html',
   styleUrl: './product-card.css',
+  standalone: true,
 })
 export class ProductCard {
 

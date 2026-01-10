@@ -103,8 +103,10 @@ services:
       - kafka
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__MongoConnection=mongodb://mongo:27017
-      - kafka__bootstrapServers=kafka:9092
+      - MongoDBSettings__ConnectionString=mongodb://mongo:27017
+      - MongoDBSettings__DatabaseName=ECommerceDb
+      - MongoDBSettings__ProductsCollectionName=Products
+      - Kafka__BootstrapServers=kafka:9092
     networks:
       - fugito-net
 

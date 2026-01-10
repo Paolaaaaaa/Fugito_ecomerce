@@ -1,5 +1,5 @@
-<div class="card bg-base-100 w-96 shadow-sm">
-    <div className="badge badge-secondary" (click)="onAddToCart()">Add</div>
+<div>
+<div class="card bg-base-100 w-96 shadow-2xl">
 
   <figure>
     <img
@@ -9,8 +9,11 @@
   <div class="card-body">
     <h2 class="card-title">{{product.name}}</h2>
     <p>{{product.description}}</p>
+
+    <p class="text-2xl">{{product.price | currency: 'COP'}}</p>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">{{product.price}}</button>
+      <button class="btn btn-primary" (click)="onAddToCart()">Agregar al Carro </button>
     </div>
   </div>
+</div>
 </div>

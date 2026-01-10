@@ -1,6 +1,5 @@
 using ProductService.DTOs;
 using ProductService.models;
-namespace ProductService.interfaces;
 
 public interface IProductService
 {
@@ -11,7 +10,7 @@ public interface IProductService
     //create a new product
     Task<Product> CreateProductAsyc(ProductDTO dto);
     //update a product
-   Product UpdateProduct(Guid id, ProductDTO dto);
+    Product UpdateProduct(Guid id, ProductDTO dto);
     //delete a product
        bool DeleteProduct(Guid id);
 

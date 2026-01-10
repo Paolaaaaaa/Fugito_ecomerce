@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ProductCard } from "../../components/product-card/product-card";
+import { ProductList } from '../../features/products/product-list/product-list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-products',
-  imports: [ProductCard],
+  imports: [ProductList, CommonModule],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })

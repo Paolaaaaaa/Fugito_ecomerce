@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductService.DTOs;
-using ProductService.interfaces;
-[Authorize]
 [ApiController]
 [Route("api/v1/product")]
 public class ProductController :  ControllerBase
@@ -10,12 +8,10 @@ public class ProductController :  ControllerBase
     
     private readonly IProductService _productService;
 
-    private readonly KafkaProducer producer;
 
-    public ProductController(IProductService productService, KafkaProducer kafka)
+    public ProductController(IProductService productService)
     {
         _productService = productService;
-        producer = kafka;
     }
 
     [HttpGet]
@@ -42,11 +38,11 @@ public class ProductController :  ControllerBase
     {
         var product = await _productService.CreateProductAsyc(dto);
         // Enviar un evento a kafka
-        var message = System.Text.Json.JsonSerializer.Serialize(product);
-        await producer.SendMessageAsync("product_created", message);
+        //var message = System.Text.Json.JsonSerializer.Serialize(product);
+        //await producer.SendMessageAsync("product_created", message);
 
         
-        return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
+        return Ok(product);
     }
 
     [HttpPut("{id}")]

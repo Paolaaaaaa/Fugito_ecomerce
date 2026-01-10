@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using ProductService.interfaces;
 using ProductServiceContext;
-using Messaging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
-var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
+var jwtKey = jwtSettings["Key"] ?? throw new InvalidOperationException("Jwt:Key is required.");
+var key = Encoding.UTF8.GetBytes(jwtKey);
 
 
 builder.Services.AddAuthentication(options =>
@@ -42,15 +41,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
+builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDBSettings"));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddScoped<IProductService, ProductServices>();
-builder.Services.AddSingleton<IProductEventProducer, KafkaProductCreateEventProducer>();
+//builder.Services.AddSingleton<IProductEventProducer, KafkaProductCreateEventProducer>();
 
 
-var BootstrapServers = builder.Configuration["Kafka:BootstrapServers"];
-Console.WriteLine($"kafka broker: {BootstrapServers}");
+//var BootstrapServers = builder.Configuration["Kafka:BootstrapServers"];
+//Console.WriteLine($"kafka broker: {BootstrapServers}");
 
 
 var app = builder.Build();
