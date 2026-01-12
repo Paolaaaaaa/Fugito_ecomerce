@@ -8,7 +8,7 @@ import { Product } from '../product.model';
 })
 export class ProductService {
 
-  private readonly baseUrl = `${environment.apiBaseUrl}/v1/product`;
+  private readonly baseUrl = `${environment.apiBaseUrlProduct}`;
   constructor(private http:HttpClient) {}
 
   getAll(): Observable<Product[]>{

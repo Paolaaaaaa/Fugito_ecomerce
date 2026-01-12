@@ -1,54 +1,9 @@
 <div>
-  <div class="navbar bg-primary shadow-sm">
-    <div class="navbar-start">
-      <div class="flex-2">
-        <a class="btn btn-ghost text-xl">Fugito E-Commerce</a>
-      </div>
-    </div>
-
-    <div class="navbar-center">
-      <ul class="menu menu-horizontal px-1">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/products">Products</a></li>
-        <li><a routerLink="/cart">Cart</a></li>
-      </ul>
-    </div>
-
-    <div class="navbar-end">
-      <div class="dropdown dropdown-end">
-        <!-- Trigger -->
-        <div
-          tabindex="0"
-          role="button"
-          class="btn btn-ghost btn-circle avatar"
-        >
-          <div class="w-10 rounded-full">
-            <img
-              alt="Login Icon"
-              src="https://img.icons8.com/material-outlined/24/user--v1.png"
-            />
-          </div>
-        </div>
-
-        <!-- Menu -->
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-20 mt-3 w-52 p-2 shadow"
-        >
-          <li><a routerLink="login">Login</a></li>
-          <li><a routerLink="signup">SignUp</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<app-navbar/>
 
 
     <router-outlet></router-outlet>
-  <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
-    <aside>
-      <p>Copyright © 2026- All right reserved by Fugito-ecomerce</p>
-    </aside>
-  </footer>
+  <app-footer/>
 </div>
 
 
