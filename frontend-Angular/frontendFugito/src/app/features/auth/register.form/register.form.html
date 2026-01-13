@@ -1,1 +1,85 @@
-<p>register.form works!</p>
+<div>
+ 
+     @if (errorMessage) {
+  <div role="alert" class="alert alert-error mr-3">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 shrink-0 stroke-current"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+    <span>{{ errorMessage }}</span>
+  </div>
+  }
+  <div class="min-h-screen bg-base-200 flex items-center justify-center">
+
+    <div class="card lg:card-side bg-base-100 shadow-2xl max-w-4xl w-full">
+      <!-- Imagen -->
+      <figure class="lg:w-1/2 hidden lg:block">
+        <img
+          src="assets/images/shopping_cell.jpg"
+          alt="Login illustration"
+          class="h-full w-full object-cover"
+        />
+      </figure>
+
+      <!-- Form -->
+      <div class="card-body lg:w-1/2">
+        <h1 class="text-3xl font-bold mb-2">Welcome back</h1>
+        <p class="text-sm opacity-70 mb-4">Register to continue to Fugito E-Commerce</p>
+
+        <form [formGroup]="formRegistration" (ngSubmit)="submit()" class="flex flex-col gap-3">
+          <!-- Email -->
+          <div>
+            <label class="label">
+              <span class="label-text">Email</span>
+            </label>
+            <input
+              type="email"
+              class="input input-bordered w-full"
+              placeholder="you@example.com"
+              formControlName="email"
+            />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input
+              type="password"
+              class="input input-bordered w-full"
+              placeholder="••••••••"
+              formControlName="password"
+            />
+          </div>
+
+
+
+          <button class="btn btn-primary mt-2" [disabled]="formRegistration.invalid || loading">
+            @if (loading) {
+            <span class="loading loading-spinner loading-sm"></span>
+            } @else {
+            <span>Register</span>
+            }
+          </button>
+        </form>
+
+        <div class="divider text-sm">OR</div>
+
+        <p class="text-sm text-center">
+          You already have an account?
+          <a routerLink="/auth/login" class="link link-primary">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,8 +14,17 @@ export class Navbar {
     private router: Router
   ) {}
 
+  islogged(): boolean{
+    return this.auth.isLoggedIn();
+  }
+
   logout() {
+    if(this.islogged()){
     this.auth.logout();
     this.router.navigate(['/auth/login']);
+
+    }else{
+      
+    }
   }
 }

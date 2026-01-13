@@ -1,6 +1,5 @@
 <div>
-
-      <div class="navbar bg-primary shadow-sm">
+  <div class="navbar bg-primary shadow-sm">
     <div class="navbar-start">
       <div class="flex-2">
         <a class="btn btn-ghost text-xl">Fugito E-Commerce</a>
@@ -18,16 +17,17 @@
     <div class="navbar-end">
       <div class="dropdown dropdown-end">
         <!-- Trigger -->
-        <div
-          tabindex="0"
-          role="button"
-          class="btn btn-ghost btn-circle avatar"
-        >
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img
-              alt="Login Icon"
-              src="https://img.icons8.com/material-outlined/24/user--v1.png"
-            />
+            @if (!islogged()) {
+
+            <img alt="Login Icon" src="https://img.icons8.com/material-outlined/24/user--v1.png" />
+
+            } @else{
+
+            <p>:)</p>
+
+            }
           </div>
         </div>
 
@@ -36,10 +36,13 @@
           tabindex="0"
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-20 mt-3 w-52 p-2 shadow"
         >
-          <li><a routerLink="/auth/login">Login</a></li>
-          <li><a routerLink="/auth/signup">SignUp</a></li>
-                <li><a>Logout</a></li>
+          @if (islogged()) {
+          <li><a (click)="logout()">Logout</a></li>
 
+          }@else {
+          <li><a routerLink="/auth/login">Login</a></li>
+          <li><a routerLink="/auth/registration">Register</a></li>
+          }
         </ul>
       </div>
     </div>

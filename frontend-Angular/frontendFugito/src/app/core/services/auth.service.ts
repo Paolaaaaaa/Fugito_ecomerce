@@ -7,6 +7,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class AuthService {
   private readonly TOKEN_KEY ='access_key';
   private readonly isBrowser: boolean;
+  private  loggedIn =false;
 
   constructor(@Inject(PLATFORM_ID) platformId: object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -25,6 +26,7 @@ export class AuthService {
       return;
     }
     localStorage.setItem(this.TOKEN_KEY, token);
+    this.loggedIn=true;
   }
 
   logout(){
@@ -32,9 +34,10 @@ export class AuthService {
       return;
     }
     localStorage.removeItem(this.TOKEN_KEY);
+    this.loggedIn=false;
   }
   isLoggedIn():boolean{
-    return !!this.getToken();
+    return this.loggedIn
   }
   
 }
