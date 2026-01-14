@@ -10,5 +10,11 @@
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
+  },
+  "/api/v1/cart": {
+    "target": "http://localhost:5003",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
 }

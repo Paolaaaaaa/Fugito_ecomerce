@@ -24,47 +24,31 @@ services:
     ports:
       - "9092:9092"
     environment:
-
-
-      #roles
+      # Roles KRaft (sin Zookeeper)
       KAFKA_NODE_ID: "1"
       KAFKA_PROCESS_ROLES: "broker,controller"
       CLUSTER_ID: "5L6g3nShT-eMCtK--X86sw"
 
-
-      #Listeners
-      KAFKA_LISTENERS: "SASL_SSL://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
-      KAFKA_ADVERTISED_LISTENERS: "SASL_SSL://kafka:9092"  # Advertised Listeners (Lo que el cliente .NET usará para conectar)
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "SASL_SSL:SASL_SSL,CONTROLLER:PLAINTEXT"
-      KAFKA_INTER_BROKER_LISTENER_NAME: "SASL_SSL"
+      # Listeners - Usando SASL_PLAINTEXT para desarrollo (sin SSL)
+      KAFKA_LISTENERS: "SASL_PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
+      KAFKA_ADVERTISED_LISTENERS: "SASL_PLAINTEXT://kafka:9092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "SASL_PLAINTEXT:SASL_PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "SASL_PLAINTEXT"
       KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
-      # Configuración de KRaft QUORUM        
+
+      # Configuración de KRaft QUORUM
       KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
 
-
-      
-      # Habilitar SASL (SEGURIDAD BÁSICA AUTENTICACIÓN)
+      # Habilitar SASL (autenticación con usuario/contraseña)
       KAFKA_SASL_ENABLED_MECHANISMS: "PLAIN"
       KAFKA_SASL_MECHANISM_INTER_BROKER_PROTOCOL: "PLAIN"
-      # Configuración de usuario y contraseña
       KAFKA_OPTS: "-Djava.security.auth.login.config=/etc/kafka/kafka_jaas.conf"
 
-      # habilitar autorización (ACLs)
+      # Habilitar autorización (ACLs)
       KAFKA_AUTHORIZER_CLASS_NAME: "org.apache.kafka.metadata.authorizer.StandardAuthorizer"
       KAFKA_SUPER_USERS: "User:admin"
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
-      KAFKA_BROKER_PRINCIPAL: "User:admin"
 
-      # Configuración de SSL TLS (Cifrado)
-      KAFKA_SSL_KEYSTORE_LOCATION: "/etc/kafka/secrets"
-      KAFKA_SSL_KEYSTORE_FILENAME: "kafka.keystore.jks"
-
-      KAFKA_SSL_TRUSTSTORE_LOCATION: "/etc/kafka/secrets"
-      KAFKA_SSL_TRUSTSTORE_FILENAME: "kafka.truststore.jks"
-      KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: "HTTPS"
-      KAFKA_SSL_KEY_CREDENTIALS: "key_creds"
-      KAFKA_SSL_KEYSTORE_CREDENTIALS: "keystore_creds"
-      KAFKA_SSL_TRUSTSTORE_CREDENTIALS: "truststore_creds"
       # Configuraciones de estabilidad
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
@@ -74,9 +58,6 @@ services:
     volumes:
       - kafka_data:/var/lib/kafka/data
       - ./kafka_jaas.conf:/etc/kafka/kafka_jaas.conf
-      - ./client.properties:/etc/kafka/client.properties
-      - ./secrets:/etc/kafka/secrets
-
 
     networks:
       - fugito-net
