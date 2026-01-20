@@ -23,8 +23,7 @@ Completar el proyecto para usar como portfolio y preparación para primer empleo
 
 **Tiempo estimado:** 2-4 horas
 
-**Prioridad:** ALTA - No puedes mostrar algo roto en una entrevista.
-
+**Prioridad:** ALTA -
 ### Tareas
 
 | # | Tarea | Tiempo | Estado |
@@ -72,7 +71,7 @@ Completar el proyecto para usar como portfolio y preparación para primer empleo
 
 ---
 
-## Fase 2: Kafka - Tu Diferenciador
+## Fase 2: Kafka - Arquitectura Event-Driven
 
 **Tiempo estimado:** 1-2 semanas (10-15 horas)
 
